@@ -45,10 +45,10 @@ module.exports = (env) => {
 	const plugins = [
 		// new CleanWebpackPlugin([outputPath]),
 		new CopyWebpackPlugin([
-			{
-				from: './_status/**/*',
-				force: true,
-			},
+			// {
+			// 	from: './_status/**/*',
+			// 	force: true,
+			// },
 			{
 				from: './assets/libs/**/*',
 				force: true,
