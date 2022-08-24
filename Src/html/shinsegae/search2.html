@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	${require('html-loader?interpolate!../_template/common_meta.html')}
+	<title>신세계백화점</title>
+	${require('html-loader?interpolate!../_template/common_res_sub.html')}
+</head>
+<body>
+
+<!-- #wrapper_web -->
+<div id="wrapper_web">
+
+	<!-- #container_web -->
+	<main id="container_web">
+
+		<!-- mobile source -->
+		<div id="wrap" class="mobile_area page-search">
+			<!-- #statusbar -->
+			<div id="statusbar"></div>
+			<!-- //#statusbar -->
+
+			<!-- #container -->
+			<div id="container">
+
+				<!-- #section -->
+				<section id="scrollArea">
+					<div class="div-cont">
+						<div class="search-wrap in-tab">
+							<p class="search-input"><a href="eshop.html" class="link-box left"></a><img src="../../assets/data/search2-input.png"></p>
+							<p class="search-tab"><img src="../../assets/data/search2-tab.png"></p>
+							<p class="search-cont">
+								<span class="div-cont">
+									<img src="../../assets/data/search2-cont-top.png">
+								</span>
+								<span class="div-cont">
+									<!-- .slider-wrap -->
+									<div class="slider-wrap search2-cont-slide">
+										<div class="swiper">
+											<div class="swiper-wrapper">
+												<div class="swiper-slide"><img src="../../assets/data/search2-cont-swipe1.png"></div>
+												<div class="swiper-slide"><img src="../../assets/data/search2-cont-swipe2.png"></div>
+											</div>
+											<div class="swiper-pagination"></div>
+										</div>
+									</div>
+									<!-- //.slider-wrap -->
+								</span>
+								<span class="div-cont">
+									<img src="../../assets/data/search2-cont-btm.png">
+								</span>
+							</p>
+						</div>
+					</div>
+				</section>
+				<!-- //#section -->
+
+			</div>
+			<!-- //#container -->
+
+			<!-- #bottom -->
+			<div id="bottom">
+				<ul id="actionbar">
+					<li><a href="eshop.html"><img src="../../assets/data/actionbar-menu1.png"></a></li>
+					<li><a href="store.html"><img src="../../assets/data/actionbar-menu2.png"></a></li>
+					<li><a href="home.html"><img src="../../assets/data/actionbar-menu3.png"></a></li>
+					<li><a href="life.html"><img src="../../assets/data/actionbar-menu4.png"></a></li>
+					<li><a href="my.html"><img src="../../assets/data/actionbar-menu5.png"></a></li>
+				</ul>
+			</div>
+			<!-- //#bottom -->
+
+		</div>
+		<!-- //mobile source -->
+
+	</main>
+	<!-- //#container_web -->
+
+</div>
+<!-- //#wrapper_web -->
+
+<script>
+	var swiper = new Swiper(".search2-cont-slide > .swiper", {
+		slidesPerView: 'auto',
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+	});
+</script>
+
+</body>
+</html>
