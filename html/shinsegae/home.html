@@ -8,6 +8,10 @@
   <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
   <!-- mobile automatic link removal -->
   <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="manifest" href="manifest.json">
   <title>신세계백화점</title>
   <link rel="stylesheet" href="../../assets/libs/swiper/swiper-bundle.min.css">
   <script src="../../assets/libs/swiper/swiper-bundle.min.js"></script>
@@ -48,7 +52,7 @@
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="video-wrap">
-                        <video id="visualVideos" loop>
+                        <video id="visualVideos" poster="../../assets/data/visual-video-poster.png" loop>
                           <source src="../../assets/data/visual-video.mp4" type="video/mp4" alt="visual video">
                         </video>
                         <div class="cover"><img src="../../assets/data/home-top.png"></div>
