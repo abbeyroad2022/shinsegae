@@ -34,6 +34,8 @@
         <!-- //#statusbar -->
         <!-- #header -->
         <div id="header" class="header-brand">
+          <a href="javascript:vold(0);" class="link-box left popup-open" data-popup="allMenu"></a>
+          <a href="search1.html" class="link-box right"></a>
         </div>
         <!-- //#header -->
 
@@ -134,6 +136,50 @@
         <!-- //#bottom -->
         <i class="dim"></i>
 
+        <!-- #allMenu -->
+        <div id="allMenu" class="full-popup all-menu">
+          <a href="javascript:vold(0);" class="link-box right popup-close"></a>
+          <div class="div-cont allmenu-top">
+            <img src="../../assets/data/allmenu-top.png">
+          </div>
+          <div class="div-cont allmenu-tab">
+            <a href="javascript:vold(0);" class="link-box left tablinks tab1 is-active" data-tab="allMenu1"></a>
+            <a href="javascript:vold(0);" class="link-box right tablinks tab2" data-tab="allMenu2"></a>
+            <!-- <img src="../../assets/data/allmenu-tab1.png"> -->
+          </div>
+          <div class="popup-inner">
+            <div id="allMenu1" class="tabcontent is-active">
+              <div class="div-cont">
+                <img src="../../assets/data/allmenu-cont1-top.png">
+              </div>
+              <div class="div-cont">
+                <!-- .slider-wrap -->
+                <div class="slider-wrap allmenu-cont-slide">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="../../assets/data/allmenu-cont1-swipe1.png"></div>
+                      <div class="swiper-slide"><img src="../../assets/data/allmenu-cont1-swipe2.png"></div>
+                      <div class="swiper-slide"><img src="../../assets/data/allmenu-cont1-swipe3.png"></div>
+                      <div class="swiper-slide"><img src="../../assets/data/allmenu-cont1-swipe4.png"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+                <!-- //.slider-wrap -->
+              </div>
+              <div class="div-cont">
+                <img src="../../assets/data/allmenu-cont1-btm.png">
+              </div>
+            </div>
+            <div id="allMenu2" class="tabcontent">
+              <div class="div-cont">
+                <img src="../../assets/data/allmenu-cont2.png">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //#allMenu -->
+
       </div>
       <!-- //mobile source -->
 
@@ -144,6 +190,37 @@
   <!-- //#wrapper_web -->
 
   <script>
+    //allmenu tab
+    const tabLinks = document.querySelectorAll(".tablinks"),
+      tabContent = document.querySelectorAll(".tabcontent");
+
+    tabLinks.forEach(function(el) {
+      el.addEventListener("click", openTabs);
+    });
+
+    function openTabs(el) {
+      const btn = el.currentTarget;
+      const tab = btn.dataset.tab;
+      tabContentScroll = document.querySelector(".popup-inner");
+      tabContent.forEach(function(el) {
+        el.classList.remove("is-active");
+      });
+      tabLinks.forEach(function(el) {
+        el.classList.remove("is-active");
+      });
+      document.querySelector("#" + tab).classList.add("is-active");
+      btn.classList.add("is-active");
+      tabContentScroll.scrollTop = 0;
+    }
+    var swiper = new Swiper(".allmenu-cont-slide > .swiper", {
+      slidesPerView: 3,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+    });
+
     const menuOn = document.querySelector(".menu-on a");
     const bottomSheet = document.querySelector("#bottomsheet");
     const dim = document.querySelector(".dim");

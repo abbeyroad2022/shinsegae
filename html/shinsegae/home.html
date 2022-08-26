@@ -184,8 +184,8 @@
             <img src="../../assets/data/allmenu-top.png">
           </div>
           <div class="div-cont allmenu-tab">
-            <a href="javascript:vold(0);" class="link-box left tablinks tab1 is-active" data-tab="allMenu1">sadfsdf</a>
-            <a href="javascript:vold(0);" class="link-box right tablinks tab2" data-tab="allMenu2">sdfsdf</a>
+            <a href="javascript:vold(0);" class="link-box left tablinks tab1 is-active" data-tab="allMenu1"></a>
+            <a href="javascript:vold(0);" class="link-box right tablinks tab2" data-tab="allMenu2"></a>
             <!-- <img src="../../assets/data/allmenu-tab1.png"> -->
           </div>
           <div class="popup-inner">
@@ -245,6 +245,7 @@
       }
     });
 
+    //allmenu tab
     const tabLinks = document.querySelectorAll(".tablinks"),
       tabContent = document.querySelectorAll(".tabcontent");
 
@@ -266,6 +267,14 @@
       btn.classList.add("is-active");
       tabContentScroll.scrollTop = 0;
     }
+    var swiper = new Swiper(".allmenu-cont-slide > .swiper", {
+      slidesPerView: 3,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+    });
 
     var swiper = new Swiper(".home-top-slide > .swiper", {
       slidesPerView: 'auto',
@@ -290,14 +299,6 @@
     });
     var swiper = new Swiper(".home-flex-slide > .swiper", {
       slidesPerView: 'auto',
-    });
-    var swiper = new Swiper(".allmenu-cont-slide > .swiper", {
-      slidesPerView: 3,
-      grabCursor: true,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-      },
     });
 
   </script>
