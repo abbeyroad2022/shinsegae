@@ -38,17 +38,17 @@
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">
 										<div class="video-wrap">
-											<video id="visualVideos" loop>
-												<source src="../../assets/data/visual-video.mp4" type="video/mp4" alt="visual video">
-											</video>
-											<div class="cover"><img src="../../assets/data/home-top.png"></div>
+											<video id="visualVideos" loop playsinline src="../../assets/data/visual-video.mp4"  poster="../../assets/data/visual-video-poster.png" type="video/mp4"></video>
+											<div class="cover">
+												<img src="../../assets/data/home-top.png">
+											</div>
 											<button type="button" class="link-box video-control"></button>
 										</div>
 									</div>
 									<div class="swiper-slide">
 										<div class="img-wrap">
 											<div class="img"><img src="../../assets/data/visual-img.png"></div>
-											<div class="cover"><img src="../../assets/data/home-top.png"></div>
+											<div class="cover"><img src="../../assets/data/home-top2.png"></div>
 										</div>
 									</div>
 								</div>
@@ -57,7 +57,7 @@
 						<!-- //.slider-wrap -->
 					</div>
 					<div id="homeSearchbar" class="div-cont">
-						<a href="search1.html"><img src="../../assets/data/home-searchbar.png"></a>
+						<a href="search1.html"><img src="../../assets/data/home-searchbar.svg" style="width: 750px"></a>
 					</div>
 					<div class="div-cont">
 						<img src="../../assets/data/home-news-store.png">
@@ -153,12 +153,12 @@
 
 			<!-- #bottom -->
 			<div id="bottom">
-				<ul id="actionbar">
-					<li><a href="eshop.html"><img src="../../assets/data/actionbar-menu1.png"></a></li>
-					<li><a href="store.html"><img src="../../assets/data/actionbar-menu2.png"></a></li>
-					<li class="menu-on"><a href="javascript:vold(0);"><img src="../../assets/data/actionbar-menu3-on.png"></a></li>
-					<li><a href="life.html"><img src="../../assets/data/actionbar-menu4.png"></a></li>
-					<li><a href="my.html"><img src="../../assets/data/actionbar-menu5.png"></a></li>
+				<ul id="actionbar" class="actionbar-home">
+					<li><a href="eshop.html"><img src="../../assets/data/actionbar-link.png"></a></li>
+					<li><a href="store.html"><img src="../../assets/data/actionbar-link.png"></a></li>
+					<li class="menu-on"><a href="javascript:vold(0);"><img src="../../assets/data/actionbar-link.png"></a></li>
+					<li><a href="life.html"><img src="../../assets/data/actionbar-link.png"></a></li>
+					<li><a href="my.html"><img src="../../assets/data/actionbar-link.png"></a></li>
 				</ul>
 			</div>
 			<!-- //#bottom -->
@@ -170,8 +170,8 @@
 					<img src="../../assets/data/allmenu-top.png">
 				</div>
 				<div class="div-cont allmenu-tab">
-					<a href="javascript:vold(0);" class="link-box left tablinks tab1 is-active" data-tab="allMenu1">sadfsdf</a>
-					<a href="javascript:vold(0);" class="link-box right tablinks tab2" data-tab="allMenu2">sdfsdf</a>
+					<a href="javascript:vold(0);" class="link-box left tablinks tab1 is-active" data-tab="allMenu1"></a>
+					<a href="javascript:vold(0);" class="link-box right tablinks tab2" data-tab="allMenu2"></a>
 					<!-- <img src="../../assets/data/allmenu-tab1.png"> -->
 				</div>
 				<div class="popup-inner">
@@ -231,6 +231,7 @@
 		}
 	});
 
+	//allmenu tab
 	const tabLinks = document.querySelectorAll(".tablinks"),
 		tabContent = document.querySelectorAll(".tabcontent");
 
@@ -251,6 +252,14 @@
 		btn.classList.add("is-active");
 		tabContentScroll.scrollTop = 0;
 	}
+	var swiper = new Swiper(".allmenu-cont-slide > .swiper", {
+        slidesPerView: 3,
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+	});
 
 	var swiper = new Swiper(".home-top-slide > .swiper", {
 		slidesPerView: 'auto',
@@ -275,14 +284,6 @@
 	});
 	var swiper = new Swiper(".home-flex-slide > .swiper", {
 		slidesPerView: 'auto',
-	});
-	var swiper = new Swiper(".allmenu-cont-slide > .swiper", {
-        slidesPerView: 3,
-        grabCursor: true,
-        pagination: {
-          el: ".swiper-pagination",
-          type: "progressbar",
-        },
 	});
 </script>
 
